@@ -1,0 +1,55 @@
+name: Node.js CI
+
+# This triggers the workflow on any push to the main branch or pull request
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Check out the code from your repository
+    - name: Checkout repository content
+      uses: actions/checkout@v3
+
+    # Step 2: Set up Node.js environment
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'  # Set the Node.js version
+
+    # Step 3: Install project dependencies
+    - name: Install dependencies
+      run: npm install
+
+    # Step 4: Run the application build (if applicable)
+    - name: Build application
+      run: echo "No build step required for this simple app"
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Check out the code
+    - name: Checkout repository content
+      uses: actions/checkout@v3
+
+    # Step 2: Set up Node.js environment
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+
+    # Step 3: Install project dependencies
+    - name: Install dependencies
+      run: npm install
+
+    # Step 4: Run unit tests (add actual tests in your project)
+    - name: Run tests
+      run: echo "No tests yet"  # Replace with actual test command, e.g., `npm test`
