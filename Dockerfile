@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Install the required Python packages
-RUN pip install flask
+RUN pip install pytest
 
 # Run the Python application
 CMD ["python", "app.py"]
