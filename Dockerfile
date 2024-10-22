@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Install the required Python packages
-RUN pip install -r requirements.txt
+RUN pip install flask
 
 # Run the Python application
 CMD ["python", "app.py"]
